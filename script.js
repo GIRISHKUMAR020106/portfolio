@@ -19,7 +19,8 @@ window.onscroll = () => {
         if(top >= offset && top < offset + height) {
             navLinks.forEach(links => {
                 links.classList.remove('active');
-                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+                const target = document.querySelector('header nav a[href*=' + id + ']');
+                if (target) target.classList.add('active');
             });
         };
     });
@@ -34,12 +35,12 @@ ScrollReveal({
 });
 
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-ScrollReveal().reveal('.home-img, .portfolio-box, .contact-card, .skill-category, .cert-item', { origin: 'bottom' });
+ScrollReveal().reveal('.home-img, .portfolio-box, .contact-card, .skill-category, .cert-item, .achievement-card', { origin: 'bottom' });
 ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
-ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
+ScrollReveal().reveal('.home-content p, .about-content, .exp-card', { origin: 'right' });
 
 new Typed('.multiple-text', {
-    strings: ['CSE Student', 'ML Enthusiast', 'Blockchain Learner'],
+    strings: ['CSE Student', 'AI/ML Enthusiast', 'NLP Researcher', 'Full Stack Developer', 'Business Analytics Learner'],
     typeSpeed: 100,
     backSpeed: 80,
     backDelay: 1000,
